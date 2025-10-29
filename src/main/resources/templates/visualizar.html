@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizar Livro</title>
+</head>
+<body>
+<h1 th:text="${livro.nome}"></h1>
+<p><strong>Autor:</strong> <span th:text="${livro.autor}"></span></p>
+<p><strong>Sinopse:</strong></p>
+<p th:text="${livro.sinopse}"></p>
+<p><strong>Valor:</strong> R$ <span th:text="${livro.valor}"></span></p>
+<a href="/livros">Voltar</a>
+</body>
+</html>
