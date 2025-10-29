@@ -1,0 +1,21 @@
+-- Criar o banco de dados
+CREATE DATABASE IF NOT EXISTS livrosdb 
+CHARACTER SET utf8mb4 
+COLLATE utf8mb4_unicode_ci;
+
+-- Usar o banco criado
+USE livrosdb;
+
+-- Criar tabela livro
+CREATE TABLE IF NOT EXISTS livro (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(255) NOT NULL,
+    autor VARCHAR(255) NOT NULL,
+    sinopse TEXT NOT NULL,
+    valor DECIMAL(10, 2) NOT NULL,
+    data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    data_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (id),
+    INDEX idx_nome (nome),
+    INDEX idx_autor (autor)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;livro
